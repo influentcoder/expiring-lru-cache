@@ -12,7 +12,7 @@ jobs:
     # well on Windows or Mac.  You can convert this to a matrix build if you need
     # cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    runs-on: ${{ matrix.config.os }} # we run many different builds
+    runs-on: ${{ matrix.config.os }}
     strategy:
       matrix:
         config:
@@ -28,9 +28,12 @@ jobs:
       shell: bash
       run: git clone https://github.com/google/googletest.git
 
-    - name: Install boost
+    - name: Download Boost
       # Required dependency to build the tests.
-      run: wget https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz -O boost_1_71_0.tar.gz && tar xzf boost_1_71_0.tar.gz && rm boost_1_71_0.tar.gz
+      run: curl -L https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz --output boost_1_71_0.tar.gz
+
+    - name: Unpack Boost
+      run: tar xzf boost_1_71_0.tar.gz
 
     - name: Create Build Environment
       # Some projects don't allow in-source building, so create a separate build directory
