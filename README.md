@@ -19,7 +19,7 @@ See the examples folder:
 #include <iostream>
 #include <string>
 #include <unistd.h>
-#include "../ExpiringLRUCache.hpp"
+#include <gh-lru/expiring_lru_cache.hpp>
 
 int main()
 {

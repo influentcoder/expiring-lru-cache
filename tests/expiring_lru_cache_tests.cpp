@@ -1,4 +1,4 @@
-#include "../ExpiringLRUCache.hpp"
+#include <gh-lru/expiring_lru_cache.hpp>
 #include <boost/functional/hash.hpp>
 #include <gtest/gtest.h>
 
