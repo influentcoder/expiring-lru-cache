@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 set(This Example)
 
 set(Sources
-    Example.cpp
+    example.cpp
 )
 
 add_executable(${This} ${Sources})
