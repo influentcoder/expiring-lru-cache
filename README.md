@@ -1,3 +1,5 @@
+![Build](https://github.com/guillaume-humbert/expiring-lru-cache/workflows/CMake/badge.svg)
+
 # High Performance LRU Cache With Expiring Elements
 
 This is very similar to a traditional LRU cache, with the additional feature that
