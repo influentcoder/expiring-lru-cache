@@ -1,7 +1,12 @@
 #include <iostream>
 #include <string>
-#include <unistd.h>
 #include <gh-lru/expiring_lru_cache.hpp>
+
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
 
 int main()
 {

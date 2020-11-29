@@ -13,6 +13,11 @@ add_subdirectory(googletest EXCLUDE_FROM_ALL)
 
 enable_testing()
 
+set(BOOST_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/boost_1_71_0")
+set(Boost_INCLUDE_DIR "${BOOST_ROOT}")
+find_package(Boost 1.71.0 REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
 set(Headers
     gh-lru/expiring_lru_cache.hpp
 )

@@ -63,7 +63,25 @@ int main()
 }
 ```
 
-# Build the example
+# Build Prerequisites
+
+Download the Boost library in your workspace. Alternatively, if you have it already
+installed in your system, you can change the root `CMakeLists.txt` and change the
+`BOOST_ROOT` variable.
+
+```bash
+$ wget https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz -O boost_1_71_0.tar.gz
+$ tar xzf boost_1_71_0.tar.gz
+$ rm boost_1_71_0.tar.gz
+```
+
+Clone the `googletest` library for tests:
+
+```bash
+$ git clone https://github.com/google/googletest.git
+```
+
+# Build the Example
 
 ```bash
 $ mkdir build
@@ -78,7 +96,7 @@ To run it:
 $ ./examples/Example
 ```
 
-# Build the tests
+# Build the Tests
 
 ```bash
 $ mkdir build

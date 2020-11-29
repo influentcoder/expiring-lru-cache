@@ -23,8 +23,11 @@ jobs:
       run: git clone https://github.com/google/googletest.git
 
     - name: Install boost
-      # Required dependency for the tests.
-      run: sudo apt-get update && sudo apt-get install -yq libboost-all-dev
+      # Required dependency to build the tests.
+      run: 
+        - wget https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz -O boost_1_71_0.tar.gz
+        - tar xzf boost_1_71_0.tar.gz
+        - rm boost_1_71_0.tar.gz
 
     - name: Create Build Environment
       # Some projects don't allow in-source building, so create a separate build directory
